@@ -1,0 +1,45 @@
+import requests
+
+def hack_camera(url):
+    response = requests.get(url)
+    if response.status_code == 200:
+        print("Camera hacked successfully!")
+    else:
+        print("Failed to hack the camera.")
+
+url = "http://camera.example.com"
+hack_camera(url)
+
+##############number 2######
+  import socket
+
+def hack_camera(ip, port):
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.connect((ip, port))
+        print("Camera hacked successfully!")
+    except ConnectionRefusedError:
+        print("Failed to hack the camera.")
+
+ip = "192.168.0.100"
+port = 8080
+hack_camera(ip, port)
+
+
+##############number 3#####  
+  import itertools
+
+def hack_camera(password_length):
+    characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    passwords = itertools.product(characters, repeat=password_length)
+
+    for password in passwords:
+        password = "".join(password)
+        if password == "admin":
+            print("Camera hacked successfully!")
+            return
+
+    print("Failed to hack the camera.")
+
+password_length = 4
+hack_camera(password_length)
