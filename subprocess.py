@@ -6,7 +6,6 @@ def detect_hidden_camera():
     networks = networks.decode('utf-8')
     networks = networks.replace('\r', '')
 
-    # Check if any network name contains keywords related to hidden cameras
     keywords = ['camera', 'spy', 'surveillance']
     hidden_cameras = []
 
